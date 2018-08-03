@@ -14,7 +14,6 @@ export class DraftComponent implements OnInit {
 
   players;
   teams;
-  selectedTeam = {id: 22};
 
   getPlayers(): void {
     this.players = this.playerService.getPlayers();
@@ -30,8 +29,6 @@ export class DraftComponent implements OnInit {
   }
 
   onSelect(teamId, playerId) { 
-    this.selectedTeam = this.teams[0];
-
     const theTeam = this.teams.find(function (team) {
       return team.id === parseInt(teamId);
     });

@@ -5,8 +5,7 @@
 * For the purposes of this challenge I will not be testing my code.
 * I'm trying to get this done as quickly as possible so things like types will likely get glossed over.
 * Included in the time it took to write this is the time for me to learn about the current state of Angular and Angular CLI.
-* Also included is how I somehow missed that it necessarily has to be an Angular app and started with React for ~ 8 or so minutes.
-* Also a 1 hour phone call.
+* There was no JSON data provided for the players or teams so I stubbed them in the relevant service (didn't seem necessary to pull them even further out into mock files).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
 

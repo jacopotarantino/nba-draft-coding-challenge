@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 
 const teams = [{
+  id: 0,
+  name: 'please select a team',
+  players: []
+}, {
   id: 21,
   name: 'lebron team',
   players: []

@@ -20,7 +20,7 @@ export class RostersComponent implements OnInit {
   }
 
   getTeams(): void {
-    this.teams = this.teamService.getTeams();
+    this.teams = this.teamService.getTeams().filter(team => team.id !== 0);
   }
 
   ngOnInit() {

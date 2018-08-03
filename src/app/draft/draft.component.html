@@ -1,4 +1,4 @@
-<div>
+<div class="col-xs-12">
   <h2>Drafts</h2>
   <p *ngIf="players.length > 0">Please select a team for each player in the draft</p>
 
@@ -6,14 +6,23 @@
     The draft is over! Please go to the <a routerLink="/rosters">rosters</a> page
   </div>
 
-  <ul class="players">
-    <li *ngFor="let player of players">
-      <span class="player">{{player.name}}</span>
-      <select (change)="onSelect($event.target.value, player.id)" [(ngModel)]="selectedTeam.id">
-        <option *ngFor="let team of teams" value= {{team.id}}>
-          {{team.name}}
-        </option>
-      </select>
-    </li>
-  </ul>
+  <div *ngIf="players.length !== 0" class="panel panel-default col-xs-12">
+    <div class="panel-heading row">
+      <div class="col-xs-6">Player Name</div>
+      <div class="col-xs-6">Select Team</div>
+    </div>
+
+    <div class="panel-body">
+      <ul class="players list-group">
+        <li *ngFor="let player of players" class="list-group-item row">
+          <span class="player col-xs-6">{{player.name}}</span>
+          <select class="col-xs-6" (change)="onSelect($event.target.value, player.id)">
+            <option *ngFor="let team of teams" value={{team.id}}>
+              {{team.name}}
+            </option>
+          </select>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
