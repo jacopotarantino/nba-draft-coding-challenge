@@ -29,13 +29,17 @@ export class DraftComponent implements OnInit {
     this.getTeams();
   }
 
-  onSelect(teamId) { 
-    this.selectedTeam = null;
-    for (var i = 0; i < this.teams.length; i++)
-    {
-      if (this.teams[i].id == teamId) {
-        this.selectedTeam = this.teams[i];
-      }
-    }
+  onSelect(teamId, playerId) { 
+    this.selectedTeam = this.teams[0];
+
+    const theTeam = this.teams.find(function (team) {
+      return team.id === parseInt(teamId);
+    });
+    const thePlayer = this.players.find(function (player) {
+      return player.id === parseInt(playerId);
+    })
+
+    theTeam.players.push(thePlayer);
+    this.players.splice(this.players.indexOf(thePlayer), 1);
   }
 }

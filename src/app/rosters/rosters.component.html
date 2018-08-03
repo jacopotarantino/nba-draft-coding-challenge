@@ -1,9 +1,12 @@
 <div>
-  rosters works!
+  <h2>Rosters</h2>
 
   <ul class="teams">
     <li *ngFor="let team of teams">
-      <span class="team">{{team.id}}</span> {{team.name}}
+      <span class="team">{{team.name}}</span>
+      <ul class="players-list">
+        <li *ngFor="let player of team.players">{{player.name}}</li>
+      </ul>
     </li>
   </ul>
 </div>

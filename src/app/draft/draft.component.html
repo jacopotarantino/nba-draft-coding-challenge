@@ -1,5 +1,6 @@
 <div>
-  draft works!
+  <h2>Drafts</h2>
+  <p *ngIf="players.length > 0">Please select a team for each player in the draft</p>
 
   <div *ngIf="players.length === 0">
     The draft is over! Please go to the <a routerLink="/rosters">rosters</a> page
@@ -7,8 +8,8 @@
 
   <ul class="players">
     <li *ngFor="let player of players">
-      <span class="player">{{player.id}}</span> {{player.name}}
-      <select (change)="onSelect($event.target.value)" [(ngModel)]="selectedTeam.id">
+      <span class="player">{{player.name}}</span>
+      <select (change)="onSelect($event.target.value, player.id)" [(ngModel)]="selectedTeam.id">
         <option *ngFor="let team of teams" value= {{team.id}}>
           {{team.name}}
         </option>
